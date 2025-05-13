@@ -1,0 +1,76 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #84ff5f, #e6fe7b);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  /* Button Styles */
+  .fun-btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    color: white;
+    background-color: #164e08;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .fun-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: width 0.4s, height 0.4s, top 0.4s, left 0.4s;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .fun-btn:hover::before {
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+  }
+  
+  .fun-btn:active {
+    transform: scale(0.95);
+  }
+  
+  /* Button Click Animation */
+  @keyframes clickAnimation {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 0 rgba(255, 255, 255, 0.6);
+    }
+    50% {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 rgba(255, 255, 255, 0.6);
+    }
+  }
+  
+  .fun-btn.clicked {
+    animation: clickAnimation 0.5s ease;
+  }
+  
